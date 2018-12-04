@@ -126,7 +126,7 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'şəkillər')
 
 
 
-SEND_GRID_API_KEY ='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'
+SEND_GRID_API_KEY =''
 EMAIL_HOST ='smtp.sendgrid.net'
 EMAIL_HOST_USER = 'Musadiq'
 EMAIL_HOST_PASSWORD = 'musadiq123'
