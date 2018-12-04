@@ -1,0 +1,8 @@
+Ad:
+{{ Ad }}
+
+Email:
+{{ Email }}
+
+İsmaric:
+{{ form_content|safe|striptags }}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+<div class='lll'>
+{% block content %}
+<section>
+
+ <aside >
+
+
+{% for x in data %}
+<style>
+body{
+background:white;
+}
+p{
+text-align:justify;
+}
+h1{
+border: 1px outset;
+text-align:justify;
+float:middle;}
+.imag{
+display:inline;
+height:350px;;}
+</style>
+
+  <h1>{{x.başliq}}</h1>
+  <img class="imag" src={{ x.shekil.url }} width="45%" style="float:left; padding:0 10px"> 
+<p  >{{x.mezmun}}</p> 
+
+  {%endfor%}
+
+
+</aside>
+</section>
+</div>
+{% endblock %}

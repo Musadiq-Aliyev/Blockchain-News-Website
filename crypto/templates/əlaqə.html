@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+body{
+background:white;}
+.container{
+display:block;
+min-height:20%;
+margin-bottom:-5px;
+}
+button{
+float:right;
+}
+.form{
+display:block;
+width:35%;
+
+}
+.elaqee{
+position:relative;
+left:160%;
+bottom:110px;
+font-style:bold;
+font-size:20px;
+font-style:italic;
+}
+
+iframe{
+
+display:block;
+float:right;
+width:550px;
+height:300px;
+}
+</style>
+<div class="container">
+<h1>Əlaqə</h1>
+<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d3039.673361074842!2d49.843893915444!3d40.37176647937035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x40307dade1cdd6cd%3A0x78973258d3b861e5!2sMinistry+of+Communications+and+High+Technologies%2C+33+Zarifa+Aliyeva%2C+Baku+AZ+1000%2C+Azerbaijan!3m2!1d40.3717665!2d49.846082599999995!5e0!3m2!1sen!2s!4v1533227969560" frameborder="0" style="border:0"  allowfullscreen></iframe>
+	
+	<div class="col-sm-4">
+<form class="form" role="form" action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" >Göndər</button>
+</form>
+<div class="elaqee">
+<b>
+Ünvan: Bakı şəhəri, Zərifə Əliyeva küçəsi 77,
+
+Poçt indeksi: AZ1000
+
+Telefon: +994 (012) 498-58-38 </br>
+
+Faks: +994 (012) 498-79-12 </b>
+</div>
+</div>
+    </div>
+      
+{% endblock %}

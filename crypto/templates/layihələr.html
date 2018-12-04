@@ -1,0 +1,79 @@
+	{% extends 'base.html' %}
+	{% block content %}
+	
+	<style>
+
+	body{
+	
+	background:#f6f6f6;}
+	</style>
+	
+	<section>
+
+	 <aside>
+<style>
+.larg{
+border:2px outset;
+background-color:white;}
+
+.proj{
+height:25vh;
+border-bottom:2px solid silver;
+}
+
+.card{
+border-radius:5px;
+margin-top:5%;
+background:#f6f6f6;
+border:1px outset;
+}
+
+hr{
+border-bottom:1px solid #9a9a9a;
+     display: block;
+    unicode-bidi: isolate;
+    -webkit-margin-before: 0.3em;
+    -webkit-margin-after: 0.3em;
+    -webkit-margin-start: auto;
+    -webkit-margin-end: auto;
+    overflow: hidden;
+}
+span{
+margin:2%;
+font-family:Times New Roman, Arial, sans-serif;
+font-size: 34px;
+    font-weight: 380;
+	  color:#37474f !important;}
+</style>
+<div class="larg">
+<span class="card-title blue-grey-text text-darken-3">Layihələr</span>
+<hr class="textt"> 
+	<div class="container">
+		<div class="row" >
+			{% for x in layihədata %}
+
+
+			 		<div class="col-sm-4"; >
+			 			<div class="card"  onclick="location='/layihələr/{{x.ad}}';" style="cursor: pointer; margin-left:5%; width: 16rem;height:15rem" >
+			        <div style="width:100%; float:center">
+			 				<img class="proj" src={{ x.shekil.url }} style="width:100%;" >
+			      </div>
+			 				<div class=""  style="position:absolute; bottom:-20px; left:0px; width:100%; height:30%">
+
+			 					<h6 class="card-title">{{ x.ad }}</h5>
+
+			 				</div>
+			 			</div>
+			 			<br/>
+			 		</div>
+
+			{% endfor %}
+		</div>
+	</div>
+	</div>
+	</aside>
+	</section>
+
+
+	{% endblock %}
+

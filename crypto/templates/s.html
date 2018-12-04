@@ -1,0 +1,57 @@
+{% extends 'base.html'%}
+
+
+{% block content %}
+{% if notfound %}
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">{{ notfound }}</h1>
+    
+  </div>
+</div>
+{% endif %}
+
+{% for Xəbərlər in xəbərdata %}
+
+<div class="col-sm"; >
+  <div class="card" onclick="location='/xəbərlər/{{Xəbərlər.başliq}}';" style="cursor: pointer;width: 18rem;height:18rem" >
+    <div style="border: 1px solid blue;width:100%;border: 1px solid blue;float:center">
+    <img class="" src={{ Xəbərlər.shekil.url }} style="width:100%;" >
+  </div>
+    <div class="" style="position:absolute; bottom:0px; left:0px; width:100%;">
+
+      <h5 class="card-title">{{ Xəbərlər.başliq }}</h5>
+
+    </div>
+  </div>
+  <br/>
+</div>
+
+{% endfor %}
+
+{% for Layihələr in layihədata %}
+
+<div class="col-sm"; >
+  <div class="card" onclick="location='/layihələr/{{Layihələr.ad}}';" style="cursor: pointer;width: 18rem;height:18rem" >
+    <div style="border: 1px solid blue;width:100%;border: 1px solid blue;float:center">
+    <img class="" src={{ Layihələr.shekil.url }} style="width:100%;" >
+  </div>
+    <div class="" style="position:absolute; bottom:0px; left:0px; width:100%;">
+
+      <h5 class="card-title">{{ Layihələr.ad }}</h5>
+
+    </div>
+  </div>
+  <br/>
+</div>
+
+{% endfor %}
+
+
+
+
+
+
+
+{% endblock %}

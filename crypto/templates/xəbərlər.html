@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+		#container{
+		border:2px outset;
+		margin-top: 3%;
+		background:white;
+       display:none;}
+		.xarici{
+		width:100%;
+		height:35px;
+		background:#0d1b33;
+		font-weight:bold;
+		color:white;
+		font-size:18px;
+		}
+.local{
+height:25vh;
+border-bottom:2px solid silver;
+
+}
+.card{
+margin-left:5%;}
+.foooter{
+
+margin-top:15%;
+}
+		.card{
+		border;
+		border:1px outset;
+		border-radius:none;
+		background:#f6f6f6;
+		
+		}
+	
+	
+body{
+background:#f6f6f6;
+}
+span {
+
+margin:2%;
+font-family:Times New Roman, Arial, sans-serif;
+font-size: 34px;
+    font-weight: 380;
+	  color:#37474f !important;
+}
+.textt {
+ border-bottom:1px solid #9a9a9a;
+     display: block;
+    unicode-bidi: isolate;
+    -webkit-margin-before: 0.3em;
+    -webkit-margin-after: 0.3em;
+    -webkit-margin-start: auto;
+    -webkit-margin-end: auto;
+    overflow: hidden;
+}
+.big{
+background:white;
+border:2px outset;
+}
+h5{
+text-align:justify;
+}
+
+</style>
+<section>
+
+ <aside>
+
+
+<div class="big"> 
+<span class="card-title blue-grey-text text-darken-3">  Xəbərlər</span>
+<hr class="textt"> 
+ <div class="container">
+ 	<div class="row">
+ 		{% for Xəbərlər in xəbərdata %}
+		
+ 		<div class="col-sm-4"; >
+ 			<div class="card" onclick="location='/xəbərlər/{{Xəbərlər.başliq}}';" style="cursor: pointer; margin-top:5%; width: 16rem;height:15rem" >
+        <div style="width:100%; float:center">
+		
+ 				<img class="local" src={{ Xəbərlər.shekil.url }} style="width:100%;" >
+      </div>
+ 				<div class="" style="position:absolute; bottom:-20px; left:0px; width:100%; height:30%">
+
+ 					<h6 class="card-title">{{ Xəbərlər.başliq|truncatechars:55 }}</h5>
+
+ 				</div>
+ 			</div>
+ 			<br/>
+ 		</div>
+
+ 		{% endfor %}
+ 	</div>
+
+  <div align="center">
+    {% for i in sayfa %}
+<style>
+.page{
+width:30px;
+height:30px;
+background:#0d1b33;
+font-weight:bold;
+color:white;
+}
+</style>
+
+   <button class="page" <a href='/xəbərlər/seyfe/{{i}}'>{{i}}</a> </button>
+    {% endfor %}
+    {{test}}
+  </div>
+ </div>
+
+
+</aside>
+</section>
+
+<hr>
+<button class="xarici" onclick="myFunction()">Xarici xəbərlərə keçid</button>
+<div id="container">
+	<div class="row">
+		{% for x in api.Data %}
+		
+		<div class="col-sm-4">
+			<div class="card"  style="width: 16rem; margin:0 auto; margin-top:5%;">
+				<img class="card-img-top" style="height:25vh" src="{{ x.imageurl }}" alt="{{ x.source }}">
+				<div class="card-body">
+					<h6 class="card-title">{{ x.title|truncatechars:55 }}</h6>
+					
+					<a href="{{ x.url }}" target="_blank" class="btn btn-primary">Daha cox...</a>
+				</div>
+			</div>
+			<br/>
+	
+		</div>
+		
+		{% endfor %}
+	</div>
+</div>
+
+</div>
+<script>
+function myFunction() {
+    var x = document.getElementById("container");
+    if (x.style.display === "none" || x.style.display=='') {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+</script>
+                                                             
+
+
+{% endblock %}

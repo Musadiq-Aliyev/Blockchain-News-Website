@@ -1,0 +1,351 @@
+
+{% block content %}
+<style>
+  html{
+    overflow-y:hidden;
+    }
+  * {
+
+      box-sizing: border-box;
+  }
+
+
+  body {
+      font-family: Arial;
+      font-size: 17px;
+  }
+
+  #myVideo {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+    z-index:-1;
+  }
+
+
+
+  .orta{
+    background-color:none;
+    opacity:0.8;
+      width:145px;
+      height:130px;
+      border-radius: 10px;
+    transition:width 1s , height 1s;
+    border:none;
+  }
+   .orta:hover{
+    position:relative;
+    cursor:pointer;
+    z-index: 3;
+    width: 170px;
+    height: 170px;
+    border-radius:10px;
+    opacity:1;
+
+  }
+
+  span{
+    font-size:22px;
+    color:white;
+    position:relative;
+    top:85px;
+  }
+  #pub_tr{
+    background-color:#e8eced;
+    background-image:url("https://image.flaticon.com/icons/svg/1042/1042286.svg");
+    background-repeat:no-repeat;
+    background-size:85%;
+    background-position:center;
+  }
+  #media{
+    background-color:#e8eced;
+    background-image:url("https://www.flaticon.com/premium-icon/icons/svg/719/719680.svg");
+    background-repeat:no-repeat;
+    background-size:85%;
+    background-position:center;
+  }
+  td{
+    font-size:16px;
+    font-weight:bold;
+    font-style:italic;
+  }
+  #tehsil{
+    background-color:#e8eced;
+    background-image:url("https://image.flaticon.com/icons/svg/182/182327.svg");
+    background-repeat:no-repeat;
+    background-size:85%;
+    background-position:center;
+  }
+  #car{
+    background-color:#e8eced;
+    background-image:url("https://image.flaticon.com/icons/svg/846/846296.svg");
+    background-repeat:no-repeat;
+    background-size:85%;
+    background-position:center;
+  }
+  #emlak{
+    background-color:#e8eced;
+    background-image:url("https://image.flaticon.com/icons/svg/149/149445.svg");
+    background-repeat:no-repeat;
+    background-size:85%;
+    background-position:center;
+  }
+  #cyber{
+    background-color:#e8eced;
+    background-image:url("https://www.flaticon.com/premium-icon/icons/svg/655/655472.svg");
+    background-repeat:no-repeat;
+    background-size:85%;
+    background-position:center;
+  }
+
+  #med{
+    background-image:url("https://image.flaticon.com/icons/svg/687/687529.svg");
+    background-size:85%;
+    background-color:#e8eced;
+
+    background-repeat:no-repeat;
+    background-position:center;
+  }
+  #bank{
+    background-image:url("https://image.flaticon.com/icons/svg/584/584073.svg");
+    background-size:85%;
+    background-color:#e8eced;
+    background-repeat:no-repeat;
+    background-position:center;
+    }
+  #security{
+    background-image:url("https://www.flaticon.com/premium-icon/icons/svg/735/735803.svg");
+    background-size:85%;
+    background-position:center;
+    background-color:#e8eced;
+    background-repeat:no-repeat;
+  }
+  #gov{
+    background-image:url("https://image.flaticon.com/icons/svg/66/66455.svg");
+    background-size:85%;
+    background-position:center;
+    background-color:#e8eced;
+    border:none;
+    background-repeat:no-repeat;
+  }
+
+  .boy{
+
+    outline:none;
+    border-style:solid;
+    background-color:#e8eced;
+    opacity:0.7;
+    width:330px;
+    height:175px;
+    border-radius: 10px;
+    transition:width 1s, height 1s;
+    z-index:1;
+    background-image:url("https://image.flaticon.com/icons/svg/887/887813.svg");
+    background-size:52%;
+    background-repeat:no-repeat;
+    background-position:center;
+  }
+
+  .orta:hover{
+    position:relative;
+    cursor:pointer;
+    z-index: 3;
+    width: 170px;
+    height: 170px;
+    border-radius:10px;
+    opacity:1;
+
+
+  }
+
+
+  .boy:hover{
+    opacity:100;
+    cursor:pointer;
+    position:relative;
+    z-index: 9;
+    width: 420px;
+    height: 195px;
+    border-radius:10px;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:420px 190px;
+  }
+  .boy_new{
+    width:900px;
+    height:500px;
+    background-color:#2b2d2b;
+    display:none;
+    margin:0 auto;
+    position:relative;
+    bottom:527px;
+    opacity:0.9;
+  }
+  #pub_td{
+    color:red;
+    font-size:16px;
+    font-style: italic;
+    font-weight:bold;
+  }
+  .alert-close {
+    background: rgba(255,255,255,0.1);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4),inset 0 -1px 2px rgba(255,255,255,0.25);
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4),inset 0 -1px 2px rgba(255,255,255,0.25);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4),inset 0 -1px 2px rgba(255,255,255,0.25);
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: normal;
+    height: 22px;
+    line-height: 24px;
+    position: absolute;
+    right: 1px;
+    text-align: center;
+    top: 9px;
+    -webkit-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
+    width: 22px;
+  }
+  .cedvel{
+    border: 1px solid red;
+	margin:0 auto;
+  margin-top:1.3%;
+    }
+
+  td{
+    text-align:center;
+    border:1px solid silver;}
+
+</style>
+
+{%for a in data%}
+
+<video autoplay muted loop id="myVideo">
+  <source src="{{a.shekil.url}}" type="video/mp4">
+{%endfor%}
+</video>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'anasəhifə' %}">Ana Səhifə</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+
+       <li class="nav-item">
+        <a class="nav-link" href="{% url 'xəbərlər' %}" >XƏBƏRLƏR</a>
+      </li>
+
+       <li class="nav-item">
+        <a class="nav-link" href="{% url 'tədbirlər' %}" >TƏDBİRLƏR</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'tərəfdaşlar' %}">TƏRƏFDAŞLAR</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'layihələr' %}">LAYİHƏLƏR</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'haqqimizda' %}">HAQQİMİZDA</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'əlaqə' %}">ƏLAQƏ</a>
+      </li>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 's' %}" >
+      {%csrf_token%}
+      <input class="form-control mr-sm-2" type="search" placeholder="Axtarin..." aria-label="Search" name="quote" >
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Axtar</button>
+    </form>
+  </div>
+</nav>
+<style>
+.texts{
+margin-left:5%;
+display:none;}
+.orta:hover .texts{
+display:block;}
+</style>
+
+<br/>
+
+<div class="large" >
+<div class="texts" style="float:left;z-index:8; height:79%; width:25%;background:blue">  </div>
+  <table class="cedvel">
+
+<tr> <td style="color:white"> İCTİMAİ NƏQLİYYAT </td> <td style="color:white"> TƏHSİL </td> <td style="color:white"> AVTOMOBİL </td>
+  <td style="color:white"> MEDİA </td> </tr>
+
+<tr> <td align="center"><button class="orta" id="pub_tr">
+    <span id="pub_td"><td><button class="orta" id="tehsil"></td>
+    <td><button class="orta" id="car"></td>
+    <td><button class="orta" id="media" class="right"></td>
+    </tr>
+  <tr><td style="color:white"> TİBB/SƏHİYYƏ </td>
+    <th style="color:white; position:relative; left:60px; font-style:italic"> BLOCKCHAİN  </th>  <th style="color:white; position:relative; left:10px; font-style:italic"> TEXNOLOGİYASI </th>    <td style="color:white"> BANK/MALİYYƏ </td>
+  </tr>
+
+  <tr><td > <button class="orta" id="med">
+    </button></td> <td  colspan=2>  <button class="boy"/></td><td> <button class="orta"  id="bank">
+    </button></td></tr>
+
+
+
+
+<tr> <td style="color:white"> TƏHLÜKƏSİZLİK </td> <td style="color:white"> KİBERTƏHLÜKƏSİZLİK</td><td style="color:white"> HÖKÜMƏT VƏ SEÇKİ </td>
+    <td style="color:white"> DAŞINMAZ ƏMLAK </td> </tr>
+
+<tr><td ><button class="orta" id="security">
+  </button></td><td><button class="orta" id="cyber"></td>
+  <td><button class="orta" id="gov"></td><td > <button class="orta" id="emlak"/></td></tr>
+
+</table>
+
+ </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+   $(document).ready(function() {
+     $(".boy").on('click',function(){
+
+    $(".boy_new").css("display", "block");
+  $(".large").css("filter", "blur(5px)");
+        });
+    });
+
+ $(document).ready(function(c) {
+
+  $('.alert-close').on('click', function(c){
+
+    $(".large").css("filter", "blur(0px)");
+    $(this).parent().hide(0, function(c){
+
+    $(".large").css("filter", "blur(0px)");
+
+    });
+  });
+});
+
+
+
+</script>
+ <div class="boy_new">
+   {%for a in pho%}
+ <img src="{{a.shekil.url}}"/>
+  {%endfor%}
+ <div class="alert-close">×</div>
+ </div>
+ {% endblock %}

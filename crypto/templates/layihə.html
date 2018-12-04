@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section>
+
+ <aside >
+
+
+{% for x in data %}
+<style>
+body{
+background:white;}
+h1{
+border:1px outset;}
+p{
+text-align:justify;}
+</style>
+
+  <h1 style="float:middle">{{x.ad}}</h1>
+
+
+  <img class="" src={{ x.shekil.url }} width="40%" height="300px;" style="float:left; padding:0 10px">
+  <p style="">&nbsp&nbsp&nbsp&nbsp{{x.meqsed}}</p>
+  {%endfor%}
+
+
+</aside>
+</section>
+{% endblock %}

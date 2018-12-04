@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<style>
+*{
+font-family:Arial, sans-serif;
+box-sizing:border-box;
+}
+html, body{
+
+height:100%;
+}
+.footer-main{
+border:2px outset;
+	background-color: #e8cf84;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: normal 16px sans-serif;
+	padding: 15px 50px;
+	margin-top: 80px;
+	
+}
+
+.footer-main .footer-left p{
+	color:  #8f9296;
+	font-size: 14px;
+	margin: 0;
+}
+
+
+.footer-main p.footer-links{
+	font-size:20px;
+	font-weight: bold;
+	color:  #ffffff;
+	margin: 0 0 10px;
+	padding: 0;
+
+}
+
+.footer-main p.footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-main .footer-right{
+position:relative;
+right:8%;
+	float: right;
+	margin-top: 6px;
+	max-width: 180px;
+}
+
+.footer-main .footer-right a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-left: 3px;
+}
+
+
+@media (max-width: 600px) {
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-right{
+		text-align: center;
+	}
+
+	.footer-distributed .footer-right{
+		float: none;
+		margin: 0 auto 20px;
+	}
+
+	.footer-distributed .footer-left p.footer-links{
+		line-height: 1.8;
+	}
+}
+#ritn{
+margin-top:3%;}
+.container{
+
+position:relative;
+ min-height:100%; 
+ height: auto !important;  
+ padding-bottom: 54px;
+}
+
+
+</style>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <title>Blockchain</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'anasəhifə' %}">Ana Səhifə</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+     
+
+       <li class="nav-item">
+        <a class="nav-link" href="{% url 'xəbərlər' %}" >XƏBƏRLƏR</a>
+      </li>
+
+       <li class="nav-item">
+        <a class="nav-link" href="{% url 'tədbirlər' %}" >TƏDBİRLƏR</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'tərəfdaşlar' %}">TƏRƏFDAŞLAR</a>
+      </li>
+    
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'layihələr' %}">LAYİHƏLƏR</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'haqqimizda' %}">HAQQİMİZDA</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'əlaqə' %}">ƏLAQƏ</a>
+      </li>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 's' %}" >
+      {%csrf_token%}
+      <input class="form-control mr-sm-2" type="search" placeholder="Axtarin..." aria-label="Search" name="quote" >
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Axtar</button>
+    </form>
+  </div>
+</nav>
+
+
+<br/>
+<div class="container">
+
+
+  {% block content %}
+  {% endblock %}
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+<footer class="footer-main">
+
+			<div class="footer-right">
+
+				<a href="https://www.facebook.com/mincomazerbaijan/" target="_blank" ><i class="fa fa-facebook"></i></a>
+				<a href="#"><i class="fa fa-twitter"></i></a>
+				<a href="#"><i class="fa fa-linkedin"></i></a>
+				
+<img id="ritn" src="http://www.mincom.gov.az/assets/images/logo_en.svg" width="300">
+			</div>
+
+			<div class="footer-left">
+
+				<p class="footer-links">
+					<a href="{% url 'anasəhifə' %}">Ana səhifə</a>
+					·
+					<a href="{% url 'xəbərlər' %}">Xəbərlər</a>
+					·
+					<a href="{% url 'tədbirlər' %}">Tədbirlər</a>
+					·
+					<a href="{% url 'tərəfdaşlar' %}">Tərəfdaşlar</a>
+					·
+					<a href="{% url 'layihələr' %}">Layihələr</a>
+					·
+					<a href="{% url 'haqqimizda' %}">Haqqımızda</a>
+					·
+					<a href="{% url 'əlaqə' %}">Əlaqə</a>
+				</p>
+<img style="height:50px; display:inline" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Emblem_of_Azerbaijan.svg/200px-Emblem_of_Azerbaijan.svg.png"/>
+		<h5 style="display:inline; position:relative"> Azərbaycan Respublikası </h5>	</br> </br>	<p style="color:black" >Bütün müəllif hüquqları qorunur &copy; 2018</p>
+				
+			</div>
+
+		</footer>
+
+
+</body>
+</html>

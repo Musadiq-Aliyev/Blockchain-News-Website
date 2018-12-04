@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+
+
+<head>
+<style>
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+</style>
+</head>
+<body>
+
+
+<div class="row">
+    {% for Tərəfdaşlar in tərəfdaşdata %}
+
+  <div class="column">
+    <img src="{{Tərəfdaşlar.shekil.url }}" alt="" style="width:90%" onclick="window.open('{{Tərəfdaşlar.url}}', '_blank');" >
+  </div>
+  
+   {% endfor %}
+
+</div>
+
+</body>
+
+
+
+                
+
+
+{% endblock %}
